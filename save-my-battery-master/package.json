@@ -1,0 +1,18 @@
+{
+  "name": "save-my-battery",
+  "version": "0.1.2",
+  "description": "Save your battery in OS X",
+  "main": "save-my-battery.js",
+  "repo": "git@github.com:screenrev/save-my-battery.git",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "save-my-battery": "./save-my-battery.js"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "node-notifier": "~1.0.0-beta"
+  }
+}
