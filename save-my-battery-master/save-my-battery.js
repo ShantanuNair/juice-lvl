@@ -37,7 +37,7 @@ var headers = {
 var options = {
   host: 'juicelvl.herokuapp.com',
   port: 80,
-  path: '/battery.js',
+  path: '/index.js',
   method: 'POST',
   headers: headers
 };
