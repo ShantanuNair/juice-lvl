@@ -13,6 +13,7 @@ var onTerminalOutput = function(error, stdout) {
     var max = /"MaxCapacity" = (\d+)/m.exec(stdout)[1];
     var current = /"CurrentCapacity" = (\d+)/m.exec(stdout)[1];
     pc = Math.round(current / max * 100);
+    //console.log(pc);
     var isCharging = /"IsCharging" = Yes/.test(stdout);
 
     sendMessage(pc + '% Battery Left');
@@ -53,16 +54,22 @@ var req = http.request(options, function(res) {
   });
 
   res.on('end', function() {
-    var resultObject = JSON.parse(responseString);
+    var resultObject = JSON.parse(JSON.stringify(responseString));
   });
 });
 
 
 
 var sendMessage = function(message) {
-    req.write(userString);
-    req.end();
-    // console.log(message);
+    // req.write(userString);
+    
+    //  console.log(userString);
+
+
+    req.write(message);
+    //console.log(message);
+    
+
     // notifier.notify({
     //     title: '🔋 Battery Alert',
     //     message: message,
